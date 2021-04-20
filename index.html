@@ -13,6 +13,7 @@
     <div id="app">
         <p>{{ message }}</p>
         <button v-on:click="func">func</button>
+        <button v-on:click="closeWindow">closeWindow</button>
     </div>
     <script>
         if ('serviceWorker' in navigator) {
@@ -31,6 +32,9 @@
                 func: function () {
                     console.log('func ');
                     this.message = 'hello';
+                },
+                closeWindow: function() {
+                    window.close();
                 }
             }
         });
